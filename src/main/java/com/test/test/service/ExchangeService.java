@@ -17,17 +17,25 @@ public class ExchangeService {
     public ExchangeService() {
         exchanges.put(1L, new Exchange(1L,"ByBit", "adasd", "https://b.b", "Nice", true, 2009L));
         exchanges.put(2L, new Exchange(1L,"ByBit", "Japan", "https://b.b", "Nice", true, 2009L));
-        exchanges.put(3L, new Exchange(1L,"ByBit", "Japaadasdn", "https://b.b", "Nice", true, 2009L));
+        exchanges.put(3L, new Exchange(1L,"ByBit", "Machasransk", "https://b.b", "Nice", true, 2009L));
         exchanges.put(4L, new Exchange(1L,"ByBit", "Japasdasdan", "https://b.b", "Nice", true, 2009L));
         exchanges.put(5L, new Exchange(1L,"ByBit", "asdasd", "https://b.b", "Nice", true, 2009L));
         exchanges.put(6L, new Exchange(1L,"ByBit", "asdasd", "https://b.b", "Nice", true, 2009L));
-        exchanges.put(7L, new Exchange(1L,"ByBit", "Japasdasasan", "https://b.b", "Nice", true, 2009L));
-        exchanges.put(8L, new Exchange(1L,"ByBit", "Japasdasdan", "https://b.b", "Nice", true, 2009L));
+        exchanges.put(7L, new Exchange(1L,"ByBit", "Machasransk", "https://b.b", "Nice", true, 2009L));
+        exchanges.put(8L, new Exchange(1L,"ByBit", "Machasransk", "https://b.b", "Nice", true, 2009L));
         exchanges.put(9L, new Exchange(1L,"ByBit", "asd", "https://b.b", "Nice", true, 2009L));
     }
     // http://localhost:8080/api/exchanges/Japan
     public List<Exchange> getAllExchanges() {
         return new ArrayList<>(exchanges.values());
     }
-    public
+    public List<Exchange> getExchangesByCountry(String country) {
+        List<Exchange> result = new ArrayList<>();
+        for (var ex : exchanges.values()) {
+            if (ex.getCountry().equals(country)) {
+                result.add(ex);
+            }
+        }
+        return result;
+    }
 }

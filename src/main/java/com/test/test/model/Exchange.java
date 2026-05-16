@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Exchange {
     private Long id;
     private String name;
-    private String county;
+    private String country;
     private String website;
     private String description;
     private boolean isActive;
